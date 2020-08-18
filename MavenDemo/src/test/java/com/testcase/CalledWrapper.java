@@ -12,7 +12,7 @@ public class CalledWrapper {
 		  wm.enterbyid("txtUsername", "Admin ");
 		  wm.enterbyid("txtPassword", "admin123");
 		  wm.clickbyxpath("//*[@id=\'btnLogin\']");
-		  wm.takesnap("‪C:\\Users\\haris\\Desktop\\snap1.png");
+		  wm.takesnap("src/test/resources/ScreenShot/sample2.png");
 		  wm.closeapp();
 			}
 

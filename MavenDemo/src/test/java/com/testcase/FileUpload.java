@@ -12,7 +12,7 @@ public class FileUpload {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
 		driver.get("https://filebin.net/");
-		driver.findElement(By.id("fileField")).sendKeys("‪C:\\Users\\haris\\Desktop\\homework.txt");
+		driver.findElement(By.xpath("//*[@id=\"fileField\"]")).sendKeys("‪C:\\Users\\haris\\Desktop\\homework.txt");
 
 	}
 

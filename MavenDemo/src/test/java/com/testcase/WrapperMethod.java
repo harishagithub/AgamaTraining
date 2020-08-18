@@ -19,15 +19,15 @@ public class WrapperMethod {
 	public void insertapp(String url)
 	{
 		WebDriverManager.chromedriver().setup();
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
 		driver.get(url);
 		}
 	
-public void enterbyid(String val,String name)
+	public void enterbyid(String val,String name)
 {
-driver.findElement(By.id(val)).sendKeys(name);
+		driver.findElement(By.id(val)).sendKeys(name);
 	}
 	
 	public void enterbyxapth(String val2, String name2)
