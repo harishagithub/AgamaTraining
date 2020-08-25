@@ -2,14 +2,17 @@ package com.testcase;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -54,6 +57,31 @@ public class WrapperMethod {
 	public void selectdropdown(String text) {
 	    Select month=new Select(driver.findElement(By.id("month")));
 	    month.selectByVisibleText(text);
+	}
+	
+	public void enterbyname(String name, String searchitem) {
+		 driver.findElement(By.name(name)).sendKeys(searchitem);
+		 Actions action = new Actions(driver);
+			
+			action.sendKeys(Keys.TAB).perform();
+		 
+		
+	}
+	public void enterkeyusingXpath(String val4){
+		driver.findElement(By.xpath(val4)).click();
+		
+	}
+	public void windowHandle() {
+	Set<String>winhandles=driver.getWindowHandles();//all the windows
+	
+	System.out.println("the number of window are:"+winhandles.size());
+	
+	
+	for(String winhandle:winhandles) {
+		driver.switchTo().window(winhandle);
+	}
+	String title=driver.getTitle();
+	System.out.println("the page title is"+ title);
 	}
 		
 	}
